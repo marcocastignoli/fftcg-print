@@ -158,8 +158,8 @@
         function generatePages() {
             const input = document.getElementById('cardInput').value;
             
-            // New regex pattern to match the cards
-            const cardPattern = /(\d+)\s+[^(]+\((\d{2}-\d{3}[HRCLSU])\)/g;
+            // Updated regex pattern to accept any single letter at the end
+            const cardPattern = /(\d+).*?\((\d+-\d{3}[A-Za-z])\)/g;
             const cards = [];
 
             // Parse input using regex
