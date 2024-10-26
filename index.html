@@ -27,20 +27,23 @@
             width: 210mm;
             height: 297mm;
             margin: 0 auto 20px auto;
-            padding: 10mm;
+            padding: 0; /* Remove padding */
             box-sizing: border-box;
             border: 1px solid #ccc;
             page-break-after: always;
+            display: flex; /* Add flex display */
+            justify-content: center; /* Center the card container */
+            align-items: center; /* Center vertically */
         }
 
         .card-container {
             display: grid;
             grid-template-columns: repeat(3, 62mm);
             grid-template-rows: repeat(3, 87mm);
-            justify-content: center;
             line-height: 0;
             font-size: 0;
-            grid-gap: 0; /* Explicitly set grid gap to 0 */
+            grid-gap: 0;
+            border: 2px dashed #000;
         }
 
         .card {
@@ -52,8 +55,8 @@
             border-right: 2px dashed #000;
             border-bottom: 2px dashed #000;
             box-sizing: border-box;
-            vertical-align: top; /* Prevent vertical alignment issues */
-            object-fit: fill; /* Changed from contain to fill */
+            vertical-align: top;
+            object-fit: fill;
         }
 
         /* Remove right border from every 3rd card */
@@ -89,6 +92,9 @@
                 /* Prevent any browser scaling */
                 transform-origin: top left;
                 transform: scale(1);
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
             }
 
             .input-section {
@@ -122,8 +128,9 @@
                 grid-template-columns: repeat(3, 62mm) !important;
                 grid-template-rows: repeat(3, 87mm) !important;
                 gap: 0 !important;
-                padding: 10mm !important; /* Add padding to create margin effect */
+                padding: 0 !important; /* Remove padding */
                 box-sizing: border-box !important;
+                border: 2px dashed #000 !important; /* Keep the outer border when printing */
             }
         }
     </style>
